@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baixar PDF</title>
+</head>
+<body>
+    <h1>Baixar PDF</h1>
+    <button id="downloadBtn">Baixar PDF</button>
+
+    <script>
+        document.getElementById('downloadBtn').addEventListener('click', function() {
+            // Cria um link temporário
+            const link = document.createElement('a');
+            link.href = 'pdf/AlexandreDev.pdf';
+            link.download = 'AlexandreDev.pdf';
+
+            // Adiciona o link ao corpo do documento
+            document.body.appendChild(link);
+
+            // Clica no link para iniciar o download
+            link.click();
+
+            // Remove o link do documento
+            document.body.removeChild(link);
+        });
+    </script>
+</body>
+</html>
